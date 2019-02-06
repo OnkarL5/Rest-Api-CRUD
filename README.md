@@ -2,14 +2,20 @@
 python, flask, flask-RESTful, flask_jwt, SQLAlchemy
 
 ## User Database
-username  
-firstName  
-lastName  
-email  
-phone  
-profilePic  
-pincode  
-password  
+FirstName(String(32))
+LastName(String(32))
+EmailId(String(64))
+City(String(32))
+Phone(Integer)
+DoB(DateTime)
+UserId(String(32))
+Password(String(500))
+MembershipType(String(16))
+MembershipSince(DateTime)
+MembershipTill(DateTime)
+Rank(Integer)
+Role(Integer)
+Points(Integer)
 
 ## endpoints
 to register: /api/register  
