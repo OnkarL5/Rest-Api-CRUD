@@ -3,7 +3,7 @@ from flask_restful import Api
 from flask_jwt import JWT
 from flask_cors import CORS
 
-from security import authenticate, identity
+#from security import authenticate, identity
 from resources.user import UserRegister, User
 from models.user import db
 
@@ -14,6 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:postgres
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['SECRET_KEY'] = 'omai-key'
+#jwt = JWT(app, authenticate, identity)
 api = Api(app)
 db.init_app(app)
 

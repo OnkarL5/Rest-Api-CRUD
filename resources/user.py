@@ -1,6 +1,8 @@
-from flask_restful import Resource, reqparse
+from flask_restful import Resource, request, reqparse
 from flask_jwt import jwt_required
 from models.user import UserModel
+import simplejson as json
+from werkzeug.security import safe_str_cmp, check_password_hash
 #changed
 
 class UserRegister(Resource):
@@ -103,7 +105,10 @@ class UserRegister(Resource):
 
 class User(Resource):
 	def get(self,EmailId):
-		usa = UserModel.find_by_email(EmailId)
-		if usa:
+		data = request.data
+		dataDict = json.loads(data)
+		usa = UserModel.find_by_email(dataDict['EmailId'])
+		if usa and check_password_hash(usa.Password, dataDict['Password']):
 			return usa.json(), 200
-		return {'message': 'Email not registered'}, 404
+		return {'message': 'Email not registered',
+			'data': dataDict}, 404
