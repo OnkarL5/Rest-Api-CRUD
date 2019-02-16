@@ -19,7 +19,7 @@ Points(Integer)
 
 ## endpoints
 to register: /api/register  
-to retrieve user data: /api/user/<string: name>  
+to retrieve user data: /api/user 
 
 ## HTTP status
 200 - ok  
