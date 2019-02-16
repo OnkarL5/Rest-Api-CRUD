@@ -22,7 +22,8 @@ db.init_app(app)
 #connection  = db.connect()
 
 api.add_resource(UserRegister, '/api/register')
-api.add_resource(User, '/api/user/<string:EmailId>')
+api.add_resource(User, '/api/user')
+
 
 if __name__ == '__main__':
     app.run()
