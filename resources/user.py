@@ -10,14 +10,14 @@ class UserRegister(Resource):
 
 	parser.add_argument('FirstName',
 		type=str,
-		required=False,
-		help="FirstName cannot be blank"
+		required=False
+		# help="FirstName cannot be blank"
 	)
 
 	parser.add_argument('LastName',
 		type=str,
-		required=False,
-		help="LastName cannot be blank"
+		required=False
+		# help="LastName cannot be blank"
 	)
 
 
@@ -29,62 +29,62 @@ class UserRegister(Resource):
 
 	parser.add_argument('City',
 		type=str,
-		required=False,
-		help="City cannot be blank"
+		required=False
+		# help="City cannot be blank"
 	)
 
 	parser.add_argument('Phone',
 		type=str,
-		required=False,
-		help="phone cannot be blank"
+		required=False
+		# help="phone cannot be blank"
 	)
 
 	parser.add_argument('DoB',
 		type=str,
-		required=False,
-		help="Dobl cannot be blank"
+		required=False
+		# help="Dobl cannot be blank"
 	)
 
 	parser.add_argument('UserId',
 		type=str,
-		required=False,
-		help="UserId cannot be blank"
+		required=False
+		# help="UserId cannot be blank"
 	)
 
 	parser.add_argument('MembershipType',
 		type=str,
-		required=False,
-		help="Email cannot be blank"
+		required=False
+		# help="Email cannot be blank"
 	)
 
 	parser.add_argument('MembershipSince',
 		type=str,
-		required=False,
-		help="MembershipSince cannot be blank"
+		required=False
+		# help="MembershipSince cannot be blank"
 	)
 
 	parser.add_argument('MembershipTill',
 		type=str,
-		required=False,
-		help="MembershipTill cannot be blank"
+		required=False
+		# help="MembershipTill cannot be blank"
 	)
 
 	parser.add_argument('Rank',
 		type=str,
-		required=False,
-		help="Rank cannot be blank"
+		required=False
+		# help="Rank cannot be blank"
 	)
 
 	parser.add_argument('Role',
 		type=str,
-		required=False,
-		help="Role cannot be blank"
+		required=False
+		# help="Role cannot be blank"
 	)
 
 	parser.add_argument('Points',
 		type=str,
-		required=False,
-		help="Email cannot be blank"
+		required=False
+		# help="Email cannot be blank"
 	)
 	parser.add_argument('Password',
 		type=str,
@@ -104,7 +104,7 @@ class UserRegister(Resource):
 
 
 class User(Resource):
-	def get(self):
+	def post(self):
 		data = request.data
 		dataDict = json.loads(data)
 		usa = UserModel.find_by_email(dataDict['EmailId'])
